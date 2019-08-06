@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,11 +21,7 @@ class UserDAOTest {
 
     @AfterAll
     static void tearDown() {
-        for (User user : users) {
-            if (user.getId() != null){
-                UserDAO.delete(user.getId());
-            }
-        }
+        users.stream().forEach(user -> UserDAO.delete(user.getId()));
     }
 
     @Test

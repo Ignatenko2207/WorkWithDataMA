@@ -181,6 +181,7 @@ public class ItemDAO {
                 "c.creation_time>? AND " +
                 "c.creation_time<? AND " +
                 "c.closed=true";
+
         return null;
     }
 
